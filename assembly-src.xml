@@ -1,0 +1,37 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+  <id>src</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <directory>${project.basedir}</directory>
+      <includes>
+        <include>.settings/**</include>
+        <include>.classpath</include>
+        <include>.project</include>
+        <include>.gitignore</include>
+        <include>README*</include>
+        <include>LICENSE*</include>
+        <include>NOTICE*</include>
+        <include>pom.xml</include>
+        <include>assembly-runtime.xml</include>
+        <include>assembly-src.xml</include>
+        <include>project-formatting-scheme.xml</include>
+        <include>dictionary.txt</include>
+        <include>build.cmd</include>
+        <include>build.sh</include>
+      </includes>
+      <useDefaultExcludes>true</useDefaultExcludes>
+    </fileSet>
+    <fileSet>
+      <directory>${project.basedir}/src</directory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+      <excludes>
+        <exclude>test/**</exclude>
+      </excludes>      
+    </fileSet>
+  </fileSets>
+</assembly>
